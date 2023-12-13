@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+:root{
+    --mardi-gras: #822E81;
+    --china-rose: #AA6373;
+    --vanilla: #F0F2A6;
+    --russian-violet: #392061;
+    --raisin-black: #1A1B25;
+
+}
+
+header{
+    color: var(--vanilla);
+    font-family:'Righteous', sans-serif; ;
+}
+
+.labeltexto{
+
+}
+
+[name="user-input"] {
+    border: 2px solid #3498db;
+    padding: 5px;
+    margin: 5px;
+  }

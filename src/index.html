@@ -5,9 +5,49 @@
   <meta charset="utf-8">
   <title>Analizador de texto</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
 </head>
 
 <body>
+  <header>
+    <h1>Analizador de texto</h1>
+  </header>
+
+  <main>
+    <form action="">
+      <div id="texto">
+        <label for="user-input" class="labeltexto">Ingrese el texto</label> <br>
+        <textarea name="user-input"  cols="30" rows="10"></textarea><br>
+
+        <button id="reset-button">Limpiar métricas</button>
+
+
+      </div>
+      <div id="resultados">
+        <ul>
+          <li data-testid="word-count" class="word-count" ></li>
+          <li data-testid="character-count" class="character-count"></li>
+          <li data-testid="character-no-spaces-count" class="character-no-spaces-count"></li>
+          <li data-testid="number-count" class="number-count"></li>
+          <li data-testid="number-sum" class="number-sum"></li>
+          <li data-testid="word-length-average" class="word-length-average"></li>
+        </ul>
+        
+      </div>
+
+     
+
+    </form>
+ 
+
+  </main>
+  <footer>
+    <p>Nataly Adriana Fernandez Ovando</p>
+  </footer>
   <script src="index.js" type="module"></script>
+
 </body>
+
 </html>
