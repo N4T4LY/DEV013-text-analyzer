@@ -1,5 +1,5 @@
 {
-  "homepage": "http://N4T4LY.github.io/DEV013-text-analyzer",
+  "homepage": "https://N4T4LY.github.io/DEV013-text-analyzer",
   "name": "text-analyzer",
   "version": "1.0.0",
   "main": "src/index.html",
@@ -18,7 +18,7 @@
     "test:e2e-browser": "playwright test --headed",
     "open-coverage-report": "opener ./coverage/lcov-report/index.html",
     "start": "serve ./src",
-    "deploy": "gh-pages -b main -d src"
+    "deploy": "gh-pages -d src"
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",
