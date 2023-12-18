@@ -14,6 +14,9 @@ const analyzer = {
   },
   getCharacterCount: (text) => {
     //TODO: esta función debe retornar el recuento de caracteres que se encuentran en el parámetro `text` de tipo `string`.
+    if (!text.trim()) {
+      return 0;
+  }
 
     return text.length;
     
@@ -22,45 +25,67 @@ const analyzer = {
   getCharacterCountExcludingSpaces: (text) => {
     //TODO: esta función debe retornar el recuento de caracteres excluyendo espacios y signos de puntuación que se encuentran en el parámetro `text` de tipo `string`.
 
+    if (!text.trim()) {
+      return 0;
+  }
+
     return text.replace(/[\s.,\/#!$%\^&\*;:{}=\-_`~()]/g, '').length;
   },
   getAverageWordLength: (text) => {    
     //TODO: esta función debe retornar la longitud media de palabras que se encuentran en el parámetro `text` de tipo `string`.
 
-    if(!text.trim()){
+ if(!text.trim()){
       return 0;
     }
-   
-    let palabras=text.split(" ");
-    let longitud=0;
+    
+    const palabras=text.split(" ");
+    const tam=palabras.length
     let suma=0;
+    
 
-    for(let i=0;i<palabras.length;i++){
+    for(let i=0;i<tam;i++){
+     
       suma+=palabras[i].length;
+      
   }
-  longitud=(suma/palabras.length).toFixed(2);
+  let longitud=(suma/palabras.length).toFixed(2);
 
-    return longitud;
+    return longitud; 
+
+   
 
   },
 
   
   getNumberCount: (text) => {
     //TODO: esta función debe retornar cúantos números se encuentran en el parámetro `text` de tipo `string`.
+    if (!text.trim() ) {
+      return 0;
+    }
     let resultado=text.match(/\d+/g);
-    return resultado.length;
+    if(resultado===null){
+      return 0;
+    }else{
+      return resultado.length;
  
+
+    }
+    
     
   },
   getNumberSum: (text) => {
     //TODO: esta función debe retornar la suma de todos los números que se encuentran en el parámetro `text` de tipo `string`.
+    if (!text.trim()) {
+      return 0;
+    }
+
     let suma=0;
     let numero=text.match(/\d+/g);
-    //console.log(numero);
+    
     if(numero){
       for(let i=0;i<numero.length;i++){
         suma+= parseInt(numero[i],10);
-        //console.log(suma);
+        
         
     }
     }else{
