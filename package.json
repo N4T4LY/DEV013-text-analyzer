@@ -19,8 +19,7 @@
     "open-coverage-report": "opener ./coverage/lcov-report/index.html",
     "start": "serve ./src",
     
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d src"
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",
