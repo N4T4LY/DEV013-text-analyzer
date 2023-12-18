@@ -26,6 +26,9 @@ let mostrarnumnumeros=document.querySelector('[data-testid="number-count"]');
 //capturo el li de suma de numeros
 let mostrarsuma=document.querySelector('[data-testid="number-sum"]');
 
+//capturo el li de longitud
+let mostrarlongitud=document.querySelector('[data-testid="word-length-average"]');
+
 //funcion, con addevenlistener escucho el valor del textarea y ejecuto las funciones del analyzer
 textarea.addEventListener('input',()=>{
     
@@ -48,6 +51,12 @@ textarea.addEventListener('input',()=>{
 
     let sumar=analyzer.getNumberSum(text);
     mostrarsuma.textContent=`Suma de números: ${sumar}`
+
+    let longitudmedia=analyzer.getAverageWordLength(text);
+    mostrarlongitud.textContent=`Longitud: ${longitudmedia}`
+
+
+
 
 
 });

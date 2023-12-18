@@ -26,7 +26,25 @@ const analyzer = {
   },
   getAverageWordLength: (text) => {    
     //TODO: esta función debe retornar la longitud media de palabras que se encuentran en el parámetro `text` de tipo `string`.
+
+    if(!text.trim()){
+      return 0;
+    }
+   
+    let palabras=text.split(" ");
+    let longitud=0;
+    let suma=0;
+
+    for(let i=0;i<palabras.length;i++){
+      suma+=palabras[i].length;
+  }
+  longitud=(suma/palabras.length).toFixed(2);
+
+    return longitud;
+
   },
+
+  
   getNumberCount: (text) => {
     //TODO: esta función debe retornar cúantos números se encuentran en el parámetro `text` de tipo `string`.
     let resultado=text.match(/\d+/g);
