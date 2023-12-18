@@ -1,4 +1,5 @@
 {
+  "homepage": "http://N4T4LY.github.io/DEV013-text-analyzer",
   "name": "text-analyzer",
   "version": "1.0.0",
   "main": "src/index.html",
@@ -17,7 +18,9 @@
     "test:e2e-browser": "playwright test --headed",
     "open-coverage-report": "opener ./coverage/lcov-report/index.html",
     "start": "serve ./src",
-    "deploy": "gh-pages -d src"
+    
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",
@@ -27,7 +30,7 @@
     "babel-jest": "^27.0.1",
     "css": "^3.0.0",
     "eslint": "^8.3.0",
-    "gh-pages": "^3.1.0",
+    "gh-pages": "^3.2.3",
     "htmlhint": "^1.0.0",
     "jest": "^27.0.1",
     "jsdom": "^21.1.1",
