@@ -1,0 +1,123 @@
+
+:root{
+    --light-purple: #ded6f8;
+    --mardi-gras: #822E81;
+    --china-rose: #AA6373;
+    --vanilla: #F0F2A6;
+    --russian-violet: #392061;
+    --raisin-black: #1A1B25;
+
+}
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+    
+}
+body{
+  /* background-color: var(--vanilla); */
+}
+
+.fondotexto{
+    background-color: var(--raisin-black);
+    text-align: center;
+}
+
+.resultados{
+    background-color:#ffffff;
+}
+
+form {
+    display: flex;
+}
+
+
+
+.fondotexto, .resultados {
+    flex: 1; /* Cada div ocupa la mitad del espacio disponible */
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 35px 30px; 
+    height: 600px;
+  }
+
+header{
+    color: var(--china-rose);
+    font-family:'Righteous', sans-serif;
+    text-align: center;
+    
+    padding: 20px;
+    /* background-color: var(--vanilla); */
+
+}
+
+.labeltexto{
+    color: var(--vanilla);
+    font-family: 'Inter', sans-serif;
+    color: var(--light-purple);
+    font-weight: 300;
+    margin-top: 50px;
+   
+    
+}
+
+[name="user-input"] {
+    border: 2px solid var(--russian-violet);
+    border-radius: 30px ;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 500px;
+    height: 200px;
+    margin-top: 40px;
+    text-align: center;
+  }
+
+  #reset-button{
+    padding: 20px 40px;
+    border-radius: 40px;
+    border: none; 
+    background: linear-gradient(70deg, var( --mardi-gras), var(--russian-violet));
+    color: #eeeeee;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    display: block;
+  }
+  #reset-button:hover{
+    padding: 20px 40px;
+    border-radius: 40px;
+    border: none; 
+    background: linear-gradient(70deg, var(--china-rose), var( --mardi-gras));
+    color: #eeeeee;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    display: block;
+  }
+
+  .datos{
+    background-color: #F8F8F8;
+    padding: 15px 40px;
+    list-style: none;
+    border-bottom: solid #392061;
+    margin-bottom: 20px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    color: var(--raisin-black);
+  }
+
+  footer{
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    text-align: center;
+    padding: 30px;
+    color: var(--light-purple);
+    background-color: var(--russian-violet);
+    /*border-radius: 20px; */
+  }
