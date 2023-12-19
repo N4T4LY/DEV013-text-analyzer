@@ -5,7 +5,7 @@ const analyzer = {
     if (!text.trim()) {
       return 0;
     }
-    //divido las cadenas en base a espacios y las almaceno en tam
+  
     let tam = text.split(" ");
 
     return tam.length;
@@ -16,8 +16,7 @@ const analyzer = {
   getCharacterCount: (text) => {
     //TODO: esta función debe retornar el recuento de caracteres que se encuentran en el parámetro `text` de tipo `string`.
 
-    //verifico si en el textarea hay espacios o la cadena esta vacia y retorna 0 si es el caso
-    if (!text.trim()) {
+    if(text===null){
       return 0;
     }
 
@@ -56,7 +55,7 @@ const analyzer = {
 
     }
     //inicializo la variable longitud, divido la suma obtenida con el for con el numero de las palabras, con el tofixed(2) convierto el valor int en un float y el con el 2 especifico cuantos decimales quiero despues de la coma
-    let longitud = (suma / tam).toFixed(2);
+    let longitud = parseFloat((suma / tam).toFixed(2));
 
     return longitud;
 
@@ -70,18 +69,20 @@ const analyzer = {
     if (!text.trim()) {
       return 0;
     }
-
-    //inicializo la variable resultado y voy almacenando los numeros que se encuentran en la cadena, con el + especifico que sean digitos consecutivos para que los tome en cuenta como numeros y no digitos aparte
-    let resultado = text.match(/\d+/g);
-    //si no existen numeros retorna 0
-    if (resultado === null) {
+    let palabras=text.split(" ");
+    if(palabras===null){
       return 0;
-    } else {
-      //y si existen numeros devuelvo el numero de elementos que se encontraron
-      return resultado.length;
-
-
     }
+    let contar=0;
+    for (let i = 0; i < palabras.length; i++) {
+      if(palabras[i].match(/\b\d+\b/g)){
+        contar=contar+1;
+      }
+      
+    }
+    return contar;
+
+    
 
 
   },
@@ -90,28 +91,26 @@ const analyzer = {
     if (!text.trim()) {
       return 0;
     }
+    let palabras=text.split(" ");
+    let suma=0;
+    for (let i = 0; i < palabras.length; i++) {
+      if(palabras[i].match(/\b\d+\b/g)){
+        if(palabras[i].match(/\b\d+(\.\d+)?\b/g)){
+          suma+=parseFloat(palabras[i]);
 
-    //inicializo variable suma
-    let suma = 0;
-    //busco los numeros y los almaceno en numero
-    let numero = text.match(/\d+/g);
-    
-    //pregunto si hay o no numeros retorna 0 si no
-    if (numero === null) {
-      return 0;
-    } else {
-      //recorro el array numero     
-      for (let i = 0; i < numero.length; i++) {
-        //en la variable suma voy sumando los numeros, con parseint los convierto a enteros en base 10
-        suma += parseInt(numero[i], 10);
 
+        }else{
+          suma+=parseInt(palabras[i]);          
+        }
+        
       }
-     
-      return suma;
+      
     }
+    
+    console.log(suma);
+    return suma;
 
-
-
+   
   },
 };
 
