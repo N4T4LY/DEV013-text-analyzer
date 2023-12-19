@@ -32,7 +32,7 @@ const analyzer = {
       return 0;
     }
     //ingreso los caracteres especiales y espacios que quiero borrar y los reemplazo en la cadena con cadenas con una cadena vacia y despues calculo el tamaño de la cadena resultante
-    return text.replace(/[\s.,\/#!$%\^&\*;:{}=\-_`~()]/g, '').length;
+    return text.replace(/[\s.,/#!$%^&*;:{}=\-_`~()]/g, "").length;
   },
   getAverageWordLength: (text) => {
     //TODO: esta función debe retornar la longitud media de palabras que se encuentran en el parámetro `text` de tipo `string`.
@@ -44,7 +44,7 @@ const analyzer = {
     //divido las palabras de acuerdo al espacio entre cada una
     const palabras = text.split(" ");
     //calculo el numero de las palabras que se fueron encontrando
-    const tam = palabras.length
+    const tam = palabras.length;
     //inicializo la variable en donde se almacena la suma de la longitud de cada palabra
     let suma = 0;
 
@@ -100,12 +100,12 @@ const analyzer = {
     if (numero === null) {
       return 0;
     } else {
-       //recorro el array numero     
-        for (let i = 0; i < numero.length; i++) {
-          //en la variable suma voy sumando los numeros, con parseint los convierto a enteros en base 10
-          suma += parseInt(numero[i], 10);
+      //recorro el array numero     
+      for (let i = 0; i < numero.length; i++) {
+        //en la variable suma voy sumando los numeros, con parseint los convierto a enteros en base 10
+        suma += parseInt(numero[i], 10);
 
-        }
+      }
      
       return suma;
     }

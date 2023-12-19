@@ -98,7 +98,7 @@ const getASTMetrics = (node, [
       }
     }
   }
-}
+};
 
 const metrics = [[], [], [], [], [], [], [], [], [], []];
 getASTMetrics(ast, metrics);
@@ -115,42 +115,42 @@ const [
   exportStatements,
 ] = metrics;
 
-describe('Tipos de datos primitivos', () => {
-  it('Se convierten valores tipo "string" a tipo "number" con "parseInt" o "parseFloat" o "Number"', () => {
+describe("Tipos de datos primitivos", () => {
+  it("Se convierten valores tipo \"string\" a tipo \"number\" con \"parseInt\" o \"parseFloat\" o \"Number\"", () => {
     expect(parseIntCalls.length + parseFloatCalls.length + NumberCalls.length).toBeGreaterThan(0);
   });
 });
 
-describe('Strings', () => {
-  it('Se usan métodos para manipular strings como "split" o "trim"', () => {
+describe("Strings", () => {
+  it("Se usan métodos para manipular strings como \"split\" o \"trim\"", () => {
     expect(splitCalls.length + trimCalls.length).toBeGreaterThan(0);
   });
 });
 
-describe('Variables', () => {
-  it('Se declaran variables con "let"', () => {
+describe("Variables", () => {
+  it("Se declaran variables con \"let\"", () => {
     expect(letStatements.length).toBeGreaterThan(0);
   });
 
-  it('Se declaran variables con "const"', () => {
+  it("Se declaran variables con \"const\"", () => {
     expect(constStatements.length).toBeGreaterThan(0);
   });
 });
 
-describe('Uso de condicionales', () => {
-  it('Se usa el statement "if...else"', () => {
+describe("Uso de condicionales", () => {
+  it("Se usa el statement \"if...else\"", () => {
     expect(ifelseStatements.length).toBeGreaterThan(0);
   });
 });
 
-describe('Uso de bucles/ciclos', () => {
-  it('Se usa el statement "for"', () => {
+describe("Uso de bucles/ciclos", () => {
+  it("Se usa el statement \"for\"", () => {
     expect(forStatements.length).toBeGreaterThan(0);
   });
 });
 
-describe('Módulos de ECMAScript', () => {
-  it('Se usa "export"', () => {
+describe("Módulos de ECMAScript", () => {
+  it("Se usa \"export\"", () => {
     expect(exportStatements.length).toBeGreaterThan(0);
   });
 });

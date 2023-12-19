@@ -1,32 +1,32 @@
-const fs = require('fs');
-const { JSDOM } = require('jsdom');
-const css = require('css');
+const fs = require("fs");
+const { JSDOM } = require("jsdom");
+const css = require("css");
 
-const html = fs.readFileSync('./src/index.html', 'utf-8');
+const html = fs.readFileSync("./src/index.html", "utf-8");
 const page = new JSDOM(html);
 const { window } = page;
 const { document } = window;
 
-const stylesPath = document.querySelector('link[rel="stylesheet"]').getAttribute('href');
-const style = fs.readFileSync('./src/' + stylesPath, 'utf-8');
+const stylesPath = document.querySelector("link[rel=\"stylesheet\"]").getAttribute("href");
+const style = fs.readFileSync("./src/" + stylesPath, "utf-8");
 const { rules } = css.parse(style).stylesheet;
 
-const BOX_MODEL_ATTRIBUTES = ['width', 'height', 'margin', 'padding', 'border', 'box-sizing', 'background'];
+const BOX_MODEL_ATTRIBUTES = ["width", "height", "margin", "padding", "border", "box-sizing", "background"];
 
 const getRulesForSelector = (selector) => {
   return rules.filter(
     (rule) =>
-      rule.type === 'rule' &&
+      rule.type === "rule" &&
       rule.selectors.some((s) => s.trim() === selector)
   );
-}
+};
 
 //get all class rules
 const classRules = [
   ...new Set( //remove duplicates
     rules.reduce( //one array with all selectors
       (result, rule) =>
-        rule.type === 'rule' ? //only rules
+        rule.type === "rule" ? //only rules
           result.concat( //concat all selectors
             rule.selectors.flatMap((s) => //flat array
               s.trim().match(/\.[a-zA-Z0-9_-]+/) //extract classes from selector
@@ -58,40 +58,40 @@ expect.extend({
   toBeUsedMoreThanOnce
 });
 
-describe('CSS', () => {
+describe("CSS", () => {
 
-  const ul = document.querySelector('ul');
+  const ul = document.querySelector("ul");
   const ulClasses = Array.from(ul.classList.values());
 
-  const lis = Array.from(ul.querySelectorAll('li'));
+  const lis = Array.from(ul.querySelectorAll("li"));
 
-  describe('Uso de selectores de CSS', () => {
+  describe("Uso de selectores de CSS", () => {
 
-    it('Se usan selectores CSS de tipo para <header>', () => {
-      const headerRules = getRulesForSelector('header');
+    it("Se usan selectores CSS de tipo para <header>", () => {
+      const headerRules = getRulesForSelector("header");
       expect(headerRules.length).toBeGreaterThan(0);
     });
 
-    it('Se usan selectores CSS de tipo para <footer>', () => {
-      const footerRules = getRulesForSelector('footer');
+    it("Se usan selectores CSS de tipo para <footer>", () => {
+      const footerRules = getRulesForSelector("footer");
       expect(footerRules.length).toBeGreaterThan(0);
     });
 
-    it('Se usan selectores CSS de atributo para <textarea>', () => {
-      const textarea = document.querySelector('textarea');
-      const name = textarea.getAttribute('name');
+    it("Se usan selectores CSS de atributo para <textarea>", () => {
+      const textarea = document.querySelector("textarea");
+      const name = textarea.getAttribute("name");
       const textareaRules = getRulesForSelector(`textarea[name="${name}"]`);
       expect(textareaRules.length).toBeGreaterThan(0);
     });
 
-    it('Se usan selectores CSS de ID para <button>', () => {
-      const button = document.querySelector('button');
-      const id = button.getAttribute('id');
+    it("Se usan selectores CSS de ID para <button>", () => {
+      const button = document.querySelector("button");
+      const id = button.getAttribute("id");
       const buttonRules = getRulesForSelector(`#${id}`);
       expect(buttonRules.length).toBeGreaterThan(0);
     });
 
-    it('Se usan selectores CSS de class para <li>', () => {
+    it("Se usan selectores CSS de class para <li>", () => {
       expect(
         lis.some((li) => {
           const liClasses = Array.from(li.classList.values());
@@ -105,7 +105,7 @@ describe('CSS', () => {
       ).toBe(true);
     });
 
-    it('Todos los selectores CSS de class se usan mas de una vez', () => {
+    it("Todos los selectores CSS de class se usan mas de una vez", () => {
       classRules.forEach((classRule) => {
         const elements = document.querySelectorAll(classRule);
         expect(elements.length).toBeUsedMoreThanOnce(classRule);
@@ -113,9 +113,9 @@ describe('CSS', () => {
     });
   });
 
-  describe('Modelo de caja (box model)', () => {
+  describe("Modelo de caja (box model)", () => {
 
-    it('Se usan atributos de modelo de caja en clase CSS para <li>', () => {
+    it("Se usan atributos de modelo de caja en clase CSS para <li>", () => {
       let allRulesAttributes = [];
       lis.forEach((li) => {
         const liClasses = Array.from(li.classList.values());

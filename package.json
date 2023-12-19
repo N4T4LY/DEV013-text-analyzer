@@ -18,7 +18,9 @@
     "test:e2e-browser": "playwright test --headed",
     "open-coverage-report": "opener ./coverage/lcov-report/index.html",
     "start": "serve ./src",
-    "deploy": "gh-pages -d src"
+    "deploy": "gh-pages -d src",
+
+    "lint":"eslint ."
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",
@@ -27,7 +29,7 @@
     "acorn": "^8.8.2",
     "babel-jest": "^27.0.1",
     "css": "^3.0.0",
-    "eslint": "^8.3.0",
+    "eslint": "^8.56.0",
     "gh-pages": "^6.1.0",
     "htmlhint": "^1.0.0",
     "jest": "^27.0.1",
