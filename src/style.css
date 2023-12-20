@@ -18,13 +18,25 @@ body{
   /* background-color: var(--vanilla); */
 }
 
-.fondotexto{
+#fondotexto{
     background-color: var(--raisin-black);
     text-align: center;
+    flex: 1; /* Cada div ocupa la mitad del espacio disponible */
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 35px 30px; 
+    height: 600px;
 }
 
-.resultados{
+#resultados{
     background-color:#ffffff;
+    flex: 1; /* Cada div ocupa la mitad del espacio disponible */
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 35px 30px; 
+    height: 600px;
 }
 
 form {
@@ -33,7 +45,7 @@ form {
 
 
 
-.fondotexto, .resultados {
+#fondotexto, #resultados {
     flex: 1; /* Cada div ocupa la mitad del espacio disponible */
     box-sizing: border-box;
     border: 1px solid #ccc;
@@ -52,7 +64,7 @@ header{
 
 }
 
-.labeltexto{
+#labeltexto{
     color: var(--vanilla);
     font-family: 'Inter', sans-serif;
     color: var(--light-purple);
@@ -62,7 +74,7 @@ header{
     
 }
 
-[name="user-input"] {
+textarea[name="user-input"] {
     border: 2px solid var(--russian-violet);
     border-radius: 30px ;
     margin-left: auto;
