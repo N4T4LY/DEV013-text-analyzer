@@ -1,7 +1,9 @@
 const analyzer = {
   getWordCount: (text) => {
     //TODO: esta función debe retornar el recuento de palabras que se encuentran en el parámetro `text` de tipo `string`.
-
+    if(text===null){
+      return 0;
+    }
     if (!text.trim()) {
       return 0;
     }
@@ -66,6 +68,9 @@ const analyzer = {
 
   getNumberCount: (text) => {
     //TODO: esta función debe retornar cúantos números se encuentran en el parámetro `text` de tipo `string`.
+    if(text===null){
+      return 0;
+    }
     if (!text.trim()) {
       return 0;
     }
@@ -88,6 +93,9 @@ const analyzer = {
   },
   getNumberSum: (text) => {
     //TODO: esta función debe retornar la suma de todos los números que se encuentran en el parámetro `text` de tipo `string`.
+    if(text===null){
+      return 0;
+    }
     if (!text.trim()) {
       return 0;
     }
