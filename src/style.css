@@ -14,9 +14,7 @@
     box-sizing: border-box;
     
 }
-body{
-  /* background-color: var(--vanilla); */
-}
+
 
 #fondotexto{
     background-color: var(--raisin-black);
