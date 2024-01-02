@@ -29,6 +29,7 @@ En esta parte aprendi que las credenciales ssh son como un tipo de cifrado de au
 * Cuando terminé de crear mi llave SSH, cloné el repositorio con ella.
 * Una vez el proyecto en mi computadora, preparé el entorno actualizando el nodejs de mi computadora, e instalando sus dependencias dentro del proyecto con npm install y de igual forma instale playwright
 
+*Durante este periodo tambien me puse a revisar y a estudiar sobre Git.
 
 
 ## 2. Prototipo
